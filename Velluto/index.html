@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cars - سيارات فاخرة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="bg-image"></div>
+
+    <div class="overlay"></div>
+
+    <header>
+        <nav class="navbar">  
+            <div class="logo">Luxury Cars</div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about/about.html">من نحن</a></li>
+                <li><a href="services/services.html">خدماتنا</a></li>
+                <li><a href="contact/contact.html">تواصل معنا</a></li>
+                <li><a href="login/login.html">تسجيل الدخول</a></li>
+                
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>
+    </header>
+        
+    <section class="hero">
+        <div class="hero-content">
+            <h1>مرحبا بك في عالم السيارات الفاخرة</h1>
+            <p>اكتشف أفضل السيارات مع مواصفات دقيقة وأسعار مميزة</p>
+            <a href="#cars-gallery" class="btn-explore">استكشف السيارات</a>
+        </div>
+    </section>
+
+    <section class="main-search">
+        <div class="search-container">
+            <input type="text" id="mainSearchInput" placeholder="🔍 ابحث عن سيارة معينة..." class="search-input">
+            <button id="clearSearch" class="clear-btn">مسح البحث</button>
+        </div>
+    </section>
+    
+
+   
+    <section id="cars-gallery" class="cars-gallery">
+        <h2>سياراتنا الفاخرة</h2>
+        
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 ابحث عن سيارة..." />
+            </div>
+            <div class="filters">
+                <select id="engineFilter">
+                    <option value="">جميع المحركات</option>
+                    <option value="V12">V12</option>
+                    <option value="V8">V8</option>
+                    <option value="V6">V6</option>
+                    <option value="V10">V10</option>
+                    <option value="W16">W16</option>
+                    <option value="Electric">Electric</option>
+                    <option value="Turbo">Turbo</option>
+                </select>
+                <select id="priceFilter">
+                    <option value="">جميع الأسعار</option>
+                    <option value="0-50000">0 - 50,000$</option>
+                    <option value="50000-100000">50,000$ - 100,000$</option>
+                    <option value="100000-200000">100,000$ - 200,000$</option>
+                    <option value="200000-1000000">200,000$ - 1,000,000$</option>
+                    <option value="1000000-5000000">أكثر من 1,000,000$</option>
+                </select>
+            </div>
+        </div>
+<div id="noResults" class="no-results" style="display: none;">
+    <div class="car-not-found">
+        <div class="error-number">
+            <span class="digit">4</span>
+            <div class="car-icon">🚫</div>
+            <span class="digit">4</span>
+        </div>
+        
+        <div class="error-message">
+            <h1>عذراً، السيارة غير موجودة!</h1>
+            <p>لم نتمكن من العثور على "<span id="searchedCarName"></span>" في معرضنا.</p>
+        </div>
+
+        <div class="suggestions">
+            <h3>🚗 ربما تبحث عن:</h3>
+            <div class="suggested-cars">
+                <button class="suggestion-btn" onclick="searchSuggested('lamborghini')">لامبورغيني</button>
+                <button class="suggestion-btn" onclick="searchSuggested('ferrari')">فيراري</button>
+                <button class="suggestion-btn" onclick="searchSuggested('bmw')">بي إم دبليو</button>
+                <button class="suggestion-btn" onclick="searchSuggested('mercedes')">مرسيدس</button>
+                <button class="suggestion-btn" onclick="searchSuggested('porsche')">بورش</button>
+                <button class="suggestion-btn" onclick="searchSuggested('audi')">أودي</button>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn404 primary" onclick="showAllCars()">
+                <span>📋 عرض كل السيارات</span>
+            </button>
+            <button class="btn404 secondary" onclick="window.location.href='contact/contact.html'">
+                <span>📞 طلب سيارة خاصة</span>
+            </button>
+        </div>
+    </div>
+</div>
+
+        <div class="cars-container">
+            
+            <div class="car-card" data-engine="V12" data-price="450000" data-name="lamborghini aventador">
+                <img src="Cars/Lamborghini Aventador/Lamborghini5.jpg" alt="Lamborghini Aventador" onerror="this.src='https://via.placeholder.com/300x200/333/fff?text=Lamborghini'">
+                <h3>Lamborghini Aventador</h3>
+                <ul>
+                    <li>قوة المحرك: 770 حصان</li>
+                    <li>التسارع 0-100 كم/س: 2.8 ثانية</li>
+                    <li>المحرك: V12 سعة 6.5 لتر</li>
+                    <li>السرعة القصوى: 350 كم/س</li>
+                    <li>السعر: <span class="price">450,000$</span></li>
+                </ul>
+                <button class="buy-btn" data-car="Lamborghini Aventador" data-price="450000">🛒 شراء الآن</button>
+            </div>
+
+            <div class="car-card" data-engine="V8" data-price="520000" data-name="ferrari sf90">
+                <img src="Cars/Ferrari SF90/Ferrari3.jpg" alt="Ferrari SF90" onerror="this.src='https://via.placeholder.com/300x200/c00/fff?text=Ferrari'">
+                <h3>Ferrari SF90</h3>
+                <ul>
+                    <li>قوة المحرك: 986 حصان (هجين)</li>
+                    <li>التسارع 0-100 كم/س: 2.5 ثانية</li>
+                    <li>المحرك: V8 توين تيربو + كهرباء</li>
+                    <li>السرعة القصوى: 340 كم/س</li>
+                    <li>السعر: <span class="price">520,000$</span></li>
+                </ul>
+                <button class="buy-btn" data-car="Ferrari SF90" data-price="520000">🛒 شراء الآن</button>
+            </div>
+
+            
+            <div class="car-card" data-engine="V12" data-price="550000" data-name="rolls royce phantom">
+                <img src="Cars/Rolls Royce Phantom/Rolls.jpg" alt="Rolls Royce Phantom" onerror="this.src='https://via.placeholder.com/300x200/000/fff?text=Rolls+Royce'">
+                <h3>Rolls Royce Phantom</h3>
+                <ul>
+                    <li>قوة المحرك: 563 حصان</li>
+                    <li>التسارع 0-100 كم/س: 5.3 ثانية</li>
+                    <li>المحرك: V12 سعة 6.75 لتر</li>
+                    <li>السرعة القصوى: 250 كم/س</li>
+                    <li>السعر: <span class="price">550,000$</span></li>
+                </ul>
+                <button class="buy-btn" data-car="Rolls Royce Phantom" data-price="550000">🛒 شراء الآن</button>
+            </div>
+
+            
+            <div class="car-card" data-engine="V8" data-price="133000" data-name="bmw m8">
+                <img src="Cars/BMW M8/BMW3.jpg" alt="BMW M8" onerror="this.src='https://via.placeholder.com/300x200/0066b3/fff?text=BMW'">
+                <h3>BMW M8</h3>
+                <ul>
+                    <li>قوة المحرك: 625 حصان</li>
+                    <li>التسارع 0-100 كم/س: 3.2 ثانية</li>
+                    <li>المحرك: V8 توين تيربو سعة 4.4 لتر</li>
+                    <li>السرعة القصوى: 305 كم/س</li>
+                    <li>السعر: <span class="price">133,000$</span></li>
+                </ul>
+                <button class="buy-btn" data-car="BMW M8" data-price="133000">🛒 شراء الآن</button>
+            </div>
+
+           
+<div class="car-card" data-engine="V8" data-price="115000" data-name="mercedes amg gt">
+    <img src="Cars/Mercedes AMG GT/Mercedes.jpg" alt="Mercedes AMG GT" onerror="this.src='https://via.placeholder.com/300x200/000/fff?text=Mercedes'">
+    <h3>Mercedes AMG GT</h3>
+    <ul>
+        <li>قوة المحرك: 577 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.5 ثانية</li>
+        <li>المحرك: V8 توين تيربو سعة 4.0 لتر</li>
+        <li>السرعة القصوى: 318 كم/س</li>
+        <li>السعر: <span class="price">115,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Mercedes AMG GT" data-price="115000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="V10" data-price="142000" data-name="audi r8">
+    <img src="Cars/Audi R8/Audi1.jpg" alt="Audi R8" onerror="this.src='https://via.placeholder.com/300x200/ff0000/fff?text=Audi'">
+    <h3>Audi R8</h3>
+    <ul>
+        <li>قوة المحرك: 602 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.3 ثانية</li>
+        <li>المحرك: V10 سعة 5.2 لتر</li>
+        <li>السرعة القصوى: 330 كم/س</li>
+        <li>السعر: <span class="price">142,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Audi R8" data-price="142000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="Turbo" data-price="99000" data-name="porsche 911">
+    <img src="Cars/Porsche 911/Porsche.jpg" alt="Porsche 911" onerror="this.src='https://via.placeholder.com/300x200/fff/000?text=Porsche'">
+    <h3>Porsche 911</h3>
+    <ul>
+        <li>قوة المحرك: 443 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.5 ثانية</li>
+        <li>المحرك: 6 سلندر سعة 3.0 لتر</li>
+        <li>السرعة القصوى: 308 كم/س</li>
+        <li>السعر: <span class="price">99,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Porsche 911" data-price="99000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="V8" data-price="299000" data-name="mclaren 720s">
+    <img src="Cars/McLaren 720S/Mclaren4.jpeg" alt="McLaren 720S" onerror="this.src='https://via.placeholder.com/300x200/ff8700/fff?text=McLaren'">
+    <h3>McLaren 720S</h3>
+    <ul>
+        <li>قوة المحرك: 710 حصان</li>
+        <li>التسارع 0-100 كم/س: 2.9 ثانية</li>
+        <li>المحرك: V8 توين تيربو سعة 4.0 لتر</li>
+        <li>السرعة القصوى: 341 كم/س</li>
+        <li>السعر: <span class="price">299,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="McLaren 720S" data-price="299000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="V8" data-price="205000" data-name="aston martin db11">
+    <img src="Cars/Aston Martin DB11/Aston.jpg" alt="Aston Martin DB11" onerror="this.src='https://via.placeholder.com/300x200/005e34/fff?text=Aston+Martin'">
+    <h3>Aston Martin DB11</h3>
+    <ul>
+        <li>قوة المحرك: 600 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.9 ثانية</li>
+        <li>المحرك: V8 سعة 4.0 لتر</li>
+        <li>السرعة القصوى: 322 كم/س</li>
+        <li>السعر: <span class="price">205,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Aston Martin DB11" data-price="205000">🛒 شراء الآن</button>
+</div>
+ 
+<div class="car-card" data-engine="V8" data-price="150000" data-name="maserati granturismo">
+    <img src="Cars/Maserati GranTurismo/Maserati.jpg" alt="Maserati GranTurismo" onerror="this.src='https://via.placeholder.com/300x200/0000ff/fff?text=Maserati'">
+    <h3>Maserati GranTurismo</h3>
+    <ul>
+        <li>قوة المحرك: 454 حصان</li>
+        <li>التسارع 0-100 كم/س: 4.7 ثانية</li>
+        <li>المحرك: V8 سعة 4.7 لتر</li>
+        <li>السرعة القصوى: 299 كم/س</li>
+        <li>السعر: <span class="price">150,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Maserati GranTurismo" data-price="150000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="V8" data-price="105000" data-name="jaguar f type">
+    <img src="Cars/Jaguar F-Type/Jaguar.jpg" alt="Jaguar F-Type" onerror="this.src='https://via.placeholder.com/300x200/000000/fff?text=Jaguar'">
+    <h3>Jaguar F-Type</h3>
+    <ul>
+        <li>قوة المحرك: 575 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.5 ثانية</li>
+        <li>المحرك: V8 سعة 5.0 لتر</li>
+        <li>السرعة القصوى: 300 كم/س</li>
+        <li>السعر: <span class="price">105,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Jaguar F-Type" data-price="105000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="V8" data-price="100000" data-name="lexus lc500">
+    <img src="Cars/Lexus LC500/Lexus.jpg" alt="Lexus LC500" onerror="this.src='https://via.placeholder.com/300x200/0000cc/fff?text=Lexus'">
+    <h3>Lexus LC500</h3>
+    <ul>
+        <li>قوة المحرك: 471 حصان</li>
+        <li>التسارع 0-100 كم/س: 4.4 ثانية</li>
+        <li>المحرك: V8 سعة 5.0 لتر</li>
+        <li>السرعة القصوى: 270 كم/س</li>
+        <li>السعر: <span class="price">100,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Lexus LC500" data-price="100000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="V6" data-price="55000" data-name="infiniti q60">
+    <img src="Cars/Infiniti Q60/Infiniti.jpg" alt="Infiniti Q60" onerror="this.src='https://via.placeholder.com/300x200/660099/fff?text=Infiniti'">
+    <h3>Infiniti Q60</h3>
+    <ul>
+        <li>قوة المحرك: 400 حصان</li>
+        <li>التسارع 0-100 كم/س: 5.0 ثانية</li>
+        <li>المحرك: V6 سعة 3.0 لتر</li>
+        <li>السرعة القصوى: 250 كم/س</li>
+        <li>السعر: <span class="price">55,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Infiniti Q60" data-price="55000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="Electric" data-price="135000" data-name="tesla model s plaid">
+    <img src="Cars/Tesla Model S Plaid/tesla.jpg" alt="Tesla Model S Plaid" onerror="this.src='https://via.placeholder.com/300x200/cc0000/fff?text=Tesla'">
+    <h3>Tesla Model S Plaid</h3>
+    <ul>
+        <li>قوة المحرك: 1,020 حصان (كهربائي)</li>
+        <li>التسارع 0-100 كم/س: 2.1 ثانية</li>
+        <li>المحرك: كهربائي بالكامل</li>
+        <li>السرعة القصوى: 322 كم/س</li>
+        <li>السعر: <span class="price">135,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Tesla Model S Plaid" data-price="135000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="W16" data-price="3000000" data-name="bugatti chiron">
+    <img src="Cars/Bugatti Chiron/Bugatti.jpg" alt="Bugatti Chiron" onerror="this.src='https://via.placeholder.com/300x200/3333ff/fff?text=Bugatti'">
+    <h3>Bugatti Chiron</h3>
+    <ul>
+        <li>قوة المحرك: 1,479 حصان</li>
+        <li>التسارع 0-100 كم/س: 2.4 ثانية</li>
+        <li>المحرك: W16 سعة 8.0 لتر توين تيربو</li>
+        <li>السرعة القصوى: 420 كم/س</li>
+        <li>السعر: <span class="price">3,000,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Bugatti Chiron" data-price="3000000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="Turbo" data-price="35000" data-name="lancia delta">
+    <img src="Cars/Lancia Delta/Lancia.jpg" alt="Lancia Delta" onerror="this.src='https://via.placeholder.com/300x200/0066cc/fff?text=Lancia'">
+    <h3>Lancia Delta</h3>
+    <ul>
+        <li>قوة المحرك: 240 حصان</li>
+        <li>التسارع 0-100 كم/س: 6.5 ثانية</li>
+        <li>المحرك: 4 سلندر توربو سعة 1.8 لتر</li>
+        <li>السرعة القصوى: 230 كم/س</li>
+        <li>السعر: <span class="price">35,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Lancia Delta" data-price="35000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="V8" data-price="3000000" data-name="koenigsegg jesko">
+    <img src="Cars/Koenigsegg Jesko/Koenigsegg.jpg" alt="Koenigsegg Jesko" onerror="this.src='https://via.placeholder.com/300x200/ff6600/fff?text=Koenigsegg'">
+    <h3>Koenigsegg Jesko</h3>
+    <ul>
+        <li>قوة المحرك: 1,280 حصان</li>
+        <li>التسارع 0-100 كم/س: 2.5 ثانية</li>
+        <li>المحرك: V8 توين تيربو</li>
+        <li>السرعة القصوى: 482 كم/س</li>
+        <li>السعر: <span class="price">3,000,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Koenigsegg Jesko" data-price="3000000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="W12" data-price="220000" data-name="bentley continental gt">
+    <img src="Cars/Bentley Continental GT/Bentley.jpg" alt="Bentley Continental GT" onerror="this.src='https://via.placeholder.com/300x200/00cc99/fff?text=Bentley'">
+    <h3>Bentley Continental GT</h3>
+    <ul>
+        <li>قوة المحرك: 626 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.7 ثانية</li>
+        <li>المحرك: W12 سعة 6.0 لتر</li>
+        <li>السرعة القصوى: 333 كم/س</li>
+        <li>السعر: <span class="price">220,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Bentley Continental GT" data-price="220000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="V8" data-price="85000" data-name="cadillac ct5 v blackwing">
+    <img src="Cars/Cadillac CTS-V Blackwing/Cadillac.jpg" alt="Cadillac CT5-V Blackwing" onerror="this.src='https://via.placeholder.com/300x200/6600cc/fff?text=Cadillac'">
+    <h3>Cadillac CT5-V Blackwing</h3>
+    <ul>
+        <li>قوة المحرك: 668 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.7 ثانية</li>
+        <li>المحرك: V8 سوبرتشارج سعة 6.2 لتر</li>
+        <li>السرعة القصوى: 320 كم/س</li>
+        <li>السعر: <span class="price">85,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Cadillac CT5-V Blackwing" data-price="85000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="V6" data-price="500000" data-name="ford gt">
+    <img src="Cars/Ford GT/Ford3.jpg" alt="Ford GT" onerror="this.src='https://via.placeholder.com/300x200/0033cc/fff?text=Ford'">
+    <h3>Ford GT</h3>
+    <ul>
+        <li>قوة المحرك: 660 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.0 ثانية</li>
+        <li>المحرك: V6 توين تيربو سعة 3.5 لتر</li>
+        <li>السرعة القصوى: 347 كم/س</li>
+        <li>السعر: <span class="price">500,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Ford GT" data-price="500000">🛒 شراء الآن</button>
+</div>
+
+
+<div class="car-card" data-engine="V8" data-price="65000" data-name="chevrolet corvette c8">
+    <img src="Cars/Chevrolet Corvette C8/Chevrolet.jpg" alt="Chevrolet Corvette C8" onerror="this.src='https://via.placeholder.com/300x200/cc0000/fff?text=Chevrolet'">
+    <h3>Chevrolet Corvette C8</h3>
+    <ul>
+        <li>قوة المحرك: 495 حصان</li>
+        <li>التسارع 0-100 كم/س: 3.0 ثانية</li>
+        <li>المحرك: V8 سعة 6.2 لتر</li>
+        <li>السرعة القصوى: 312 كم/س</li>
+        <li>السعر: <span class="price">65,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Chevrolet Corvette C8" data-price="65000">🛒 شراء الآن</button>
+</div>
+
+<div class="car-card" data-engine="V6" data-price="100000" data-name="lotus evora">
+    <img src="Cars/Lotus Evora/Lotus.jpg" alt="Lotus Evora" onerror="this.src='https://via.placeholder.com/300x200/006600/fff?text=Lotus'">
+    <h3>Lotus Evora</h3>
+    <ul>
+        <li>قوة المحرك: 416 حصان</li>
+        <li>التسارع 0-100 كم/س: 4.1 ثانية</li>
+        <li>المحرك: V6 سعة 3.5 لتر سوبرتشارج</li>
+        <li>السرعة القصوى: 305 كم/س</li>
+        <li>السعر: <span class="price">100,000$</span></li>
+    </ul>
+    <button class="buy-btn" data-car="Lotus Evora" data-price="100000">🛒 شراء الآن</button>
+</div>
+
+    
+        </div>
+    </section>
+
+    
+<section class="site-description">
+    <div class="container">
+        <h2>عن متجر السيارات الفاخرة</h2>
+        <div class="description-box">
+            <p>نقدم لكم أفضل تشكيلة من السيارات الفاخرة من حول العالم. نحن نضمن لكم الجودة العالية والخدمة المتميزة مع ضمان شامل على جميع المركبات.</p>
+            
+           
+</section>
+
+
+<section class="reviews-section">
+    <div class="container">
+        <h2>تقييمات العملاء</h2>
+        <div class="reviews-container">
+           
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h4>أحمد محمد</h4>
+                        <div class="review-stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <span class="review-date">15 نوفمبر 2023</span>
+                </div>
+                <p class="review-text">"تجربة رائعة! السيارة كانت أفضل مما توقعت والخدمة ممتازة."</p>
+                <div class="review-car">مرسيدس S-Class</div>
+            </div>
+
+          
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h4>فاطمة عبدالله</h4>
+                        <div class="review-stars">
+                            ⭐⭐⭐⭐☆
+                        </div>
+                    </div>
+                    <span class="review-date">10 نوفمبر 2023</span>
+                </div>
+                <p class="review-text">"السيارة جميلة والاسعار مناسبة، شكراً للفريق على التعامل الراقي."</p>
+                <div class="review-car">بي إم دبليو الفئة السابعة</div>
+            </div>
+
+        
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h4>خالد العلي</h4>
+                        <div class="review-stars">
+                            ⭐⭐⭐⭐⭐
+                        </div>
+                    </div>
+                    <span class="review-date">5 نوفمبر 2023</span>
+                </div>
+                <p class="review-text">"أودي A8 رائعة! الأداء مذهل والتوصيل كان في الوقت المحدد."</p>
+                <div class="review-car">أودي A8</div>
+            </div>
+        </div>
+        
+    
+        <div class="average-rating">
+            <h3>متوسط التقييم: <span class="rating-score">4.8</span>/5</h3>
+            <div class="overall-stars">⭐⭐⭐⭐⭐</div>
+            <p class="total-reviews">بناءً على 127 تقييم</p>
+        </div>
+    </div>
+</section>
+
+   
+    <footer>
+        <div class="footer-nav">
+            <a href="index.html">الرئيسية</a>
+            <a href="about/about.html">من نحن</a>
+            <a href="services/services.html">خدماتنا</a>
+            <a href="contact/contact.html">تواصل معنا</a>
+
+        </div>
+        <p>&copy; 2025 Luxury Cars. جميع الحقوق محفوظة.</p>
+    </footer>
+
+
+<div id="purchase-popup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <h3>شراء السيارة</h3>
+        <div class="purchase-details">
+            <p id="popup-car-name"></p>
+            <p id="popup-car-price"></p>
+            <div class="purchase-form">
+                <input type="text" id="customer-name" placeholder="اسمك الكامل" required>
+                <input type="email" id="customer-email" placeholder="بريدك الإلكتروني" required>
+                <input type="tel" id="customer-phone" placeholder="رقم هاتفك" required>
+                <button id="confirm-purchase">✅ تأكيد الشراء</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
+    <div class="floating-contact">
+        <button id="quick-contact">📞 اتصل بنا</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    menuToggle.addEventListener('click', function() {
+        navLinks.classList.toggle('active');
+    });
+    
+    const navItems = document.querySelectorAll('.nav-links a');
+    navItems.forEach(item => {
+        item.addEventListener('click', function() {
+            navLinks.classList.remove('active');
+        });
+    });
+});
+</script>
+ 
+</body>
+</html>
