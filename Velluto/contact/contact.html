@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل معنا - موقع بيع السيارات</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>تواصل معنا</h1>
+            <p class="subtitle">نحن هنا لمساعدتك! تواصل معنا لأي استفسار</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="contact-intro">
+            <h2>نحن نستمع إليك</h2>
+            <p>فريقنا متاح دائماً لمساعدتك في أي استفسار أو اقتراح أو شكوى. لا تتردد في التواصل معنا.</p>
+        </section>
+
+        <div class="contact-content">
+            
+            <section class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <h3>البريد الإلكتروني</h3>
+                    <p>info@carsale.com</p>
+                    <p>support@carsale.com</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <h3>الهاتف</h3>
+                    <p>+966 55 123 4567</p>
+                    <p>+966 11 234 5678</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <h3>العنوان</h3>
+                    <p>الرياض - حي العليا</p>
+                    <p>شارع الملك فهد</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕒</div>
+                    <h3>أوقات العمل</h3>
+                    <p>الأحد - الخميس: ٩ ص - ٥ م</p>
+                    <p>الجمعة والسبت: إجازة</p>
+                </div>
+            </section>
+
+            
+            <section class="contact-form-section">
+                <h2>أرسل رسالة</h2>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">الاسم الكامل</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">رقم الهاتف</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">نوع الاستفسار</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">اختر نوع الاستفسار</option>
+                            <option value="general">استفسار عام</option>
+                            <option value="sales">استفسار مبيعات</option>
+                            <option value="support">دعم فني</option>
+                            <option value="complaint">شكوى</option>
+                            <option value="suggestion">اقتراح</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="اكتب رسالتك هنا..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">إرسال الرسالة</button>
+                </form>
+            </section>
+        </div>
+
+       
+        <section class="departments">
+            <h2>أقسامنا</h2>
+            <div class="departments-grid">
+                <div class="department-card">
+                    <h3>قسم المبيعات</h3>
+                    <p>للاستفسارات حول السيارات المتاحة والشراء</p>
+                    <p class="department-contact">sales@carsale.com</p>
+                </div>
+
+                <div class="department-card">
+                    <h3>قسم الدعم الفني</h3>
+                    <p>لمساعدتك في المشاكل التقنية والاستفسارات</p>
+                    <p class="department-contact">support@carsale.com</p>
+                </div>
+
+                <div class="department-card">
+                    <h3>الشكاوى والمقترحات</h3>
+                    <p>للاستماع إلى ملاحظاتكم وتحسين خدماتنا</p>
+                    <p class="department-contact">feedback@carsale.com</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 موقع بيع السيارات. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <script src="contact.js"></script>
+</body>
+</html>

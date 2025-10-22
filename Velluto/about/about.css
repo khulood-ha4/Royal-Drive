@@ -1,0 +1,644 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700&display=swap');
+
+:root {
+  
+  --cute-pink: #FFB7C5;
+  --cute-pink-light: #FFE4EC;
+  --cute-pink-dark: #FF85A2;
+  --cute-purple: #D4A5FF;
+  --cute-blue: #A5D8FF;
+  --cute-text: #8B4B63;
+  --cute-text-dark: #6A2C47;
+  --cute-white: #FFFFFF;
+  --cute-bg: #FFF9FB;
+  --cute-border: #FFD6E0;
+  
+  
+  --cute-shadow: 0 4px 15px rgba(255, 183, 197, 0.2);
+  --cute-shadow-hover: 0 8px 25px rgba(255, 183, 197, 0.3);
+  
+  
+  --font-xs: 0.8rem;
+  --font-sm: 0.9rem;
+  --font-md: 1rem;
+  --font-lg: 1.1rem;
+  --font-xl: 1.3rem;
+  --font-2xl: 1.6rem;
+  --font-3xl: 2rem;
+}
+
+
+[data-theme="dark"] {
+  --cute-pink: #FF95B5;
+  --cute-pink-light: #2A1A21;
+  --cute-pink-dark: #FF6B9D;
+  --cute-purple: #C285FF;
+  --cute-blue: #85C4FF;
+  --cute-text: #E8B4C9;
+  --cute-text-dark: #FFD6E0;
+  --cute-white: #1A0F14;
+  --cute-bg: #1A0F14;
+  --cute-border: #3A2A32;
+  
+  --cute-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  --cute-shadow-hover: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+body {
+  font-family: 'Tajawal', sans-serif;
+  background-color: var(--cute-bg);
+  color: var(--cute-text);
+  line-height: 1.6;
+  font-size: var(--font-md);
+}
+
+.luxury-about-us-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: var(--cute-pink);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: white;
+  box-shadow: var(--cute-shadow);
+  transition: all 0.3s ease;
+  border: 2px solid var(--cute-white);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(12deg);
+  background: var(--cute-pink-dark);
+}
+
+
+:root {
+  --cute-pink: #FFB7C5;
+  --cute-pink-dark: #FF85A2;
+  --cute-white: #FFFFFF;
+  --cute-shadow: 0 4px 15px rgba(255, 183, 197, 0.2);
+}
+
+[data-theme="dark"] {
+  --cute-pink: #FF95B5;
+  --cute-pink-dark: #FF6B9D;
+  --cute-white: #1A0F14;
+  --cute-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1) rotate(12deg);
+  background: var(--cute-pink-dark);
+}
+
+
+.luxury-about-us-hero {
+  background: linear-gradient(135deg, var(--cute-pink), var(--cute-purple));
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.luxury-about-us-hero::before {
+  
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.luxury-about-us-hero::after {
+  
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.luxury-about-us-title {
+  font-size: var(--font-3xl);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--cute-white);
+  position: relative;
+  animation: bounceIn 1s ease-out;
+}
+
+.luxury-about-us-subtitle {
+  font-size: var(--font-lg);
+  font-weight: 400;
+  max-width: 500px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  position: relative;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+
+.luxury-about-us-content {
+  padding: 3rem 0;
+  background: var(--cute-bg);
+  position: relative;
+}
+
+.luxury-about-us-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.luxury-about-us-heading {
+  font-size: var(--font-2xl);
+  margin-bottom: 1.2rem;
+  color: var(--cute-text-dark);
+  position: relative;
+  padding-right: 1rem;
+  animation: slideInRight 0.6s ease-out;
+}
+
+.luxury-about-us-heading::before {
+  content: '💖';
+  position: absolute;
+  right: -10px;
+  top: -5px;
+  font-size: var(--font-lg);
+}
+
+.luxury-about-us-paragraph {
+  font-size: var(--font-sm);
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+  color: var(--cute-text);
+  animation: fadeIn 0.6s ease-out;
+  background: var(--cute-white);
+  padding: 1.2rem;
+  border-radius: 15px;
+  box-shadow: var(--cute-shadow);
+  border-right: 3px solid var(--cute-pink);
+}
+
+.luxury-about-us-values {
+  list-style: none;
+  margin-top: 1.5rem;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.luxury-about-us-value-item {
+  padding: 0.8rem 0;
+  padding-right: 2rem;
+  position: relative;
+  font-size: var(--font-sm);
+  color: var(--cute-text);
+  transition: all 0.3s ease;
+  border-bottom: 1px dashed var(--cute-border);
+}
+
+.luxury-about-us-value-item:last-child {
+  border-bottom: none;
+}
+
+.luxury-about-us-value-item:hover {
+  transform: translateX(-8px);
+  color: var(--cute-pink-dark);
+}
+
+.luxury-about-us-value-item::before {
+  content: '🌺';
+  position: absolute;
+  right: 0;
+  font-size: var(--font-sm);
+  transition: all 0.3s ease;
+}
+
+.luxury-about-us-value-item:hover::before {
+  transform: scale(1.2);
+}
+
+
+.luxury-about-us-stats {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, var(--cute-pink-light), var(--cute-white));
+  position: relative;
+}
+
+.luxury-about-us-section-title {
+  font-size: var(--font-2xl);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  color: var(--cute-text-dark);
+  position: relative;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.luxury-about-us-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 50%;
+  transform: translateX(50%);
+  width: 60px;
+  height: 2px;
+  background: var(--cute-pink);
+  border-radius: 1px;
+}
+
+.luxury-about-us-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  position: relative;
+}
+
+.luxury-about-us-stat {
+  padding: 1.5rem 1rem;
+  background: var(--cute-white);
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  box-shadow: var(--cute-shadow);
+  text-align: center;
+  animation: scaleIn 0.5s ease-out;
+  position: relative;
+  border: 1px solid var(--cute-border);
+}
+
+.luxury-about-us-stat:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--cute-shadow-hover);
+  background: var(--cute-pink-light);
+}
+
+.luxury-about-us-stat-number {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--cute-text-dark);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.luxury-about-us-stat-label {
+  font-size: var(--font-sm);
+  color: var(--cute-text);
+  font-weight: 500;
+}
+
+
+.luxury-about-us-features {
+  padding: 3rem 0;
+  background: var(--cute-bg);
+  position: relative;
+}
+
+.luxury-about-us-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.luxury-about-us-feature {
+  padding: 1.5rem 1.2rem;
+  background: var(--cute-white);
+  border-radius: 18px;
+  transition: all 0.3s ease;
+  box-shadow: var(--cute-shadow);
+  text-align: center;
+  animation: fadeInUp 0.6s ease-out;
+  position: relative;
+  border: 1px solid var(--cute-border);
+}
+
+.luxury-about-us-feature:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--cute-shadow-hover);
+  border-color: var(--cute-pink);
+}
+
+.luxury-about-us-feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+  display: block;
+}
+
+.luxury-about-us-feature:hover .luxury-about-us-feature-icon {
+  transform: scale(1.2) rotate(8deg);
+}
+
+.luxury-about-us-feature-title {
+  font-size: var(--font-lg);
+  margin-bottom: 0.8rem;
+  color: var(--cute-text-dark);
+  font-weight: 600;
+}
+
+.luxury-about-us-feature-description {
+  font-size: var(--font-sm);
+  line-height: 1.6;
+  color: var(--cute-text);
+}
+
+
+.luxury-about-us-design-team {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, var(--cute-pink-light), var(--cute-white));
+  position: relative;
+}
+
+.luxury-about-us-team-intro {
+  font-size: var(--font-sm);
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+  color: var(--cute-text);
+  text-align: center;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.luxury-about-us-design-team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+}
+
+.luxury-about-us-designer {
+  padding: 2rem 1.5rem;
+  background: var(--cute-white);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: var(--cute-shadow);
+  position: relative;
+  text-align: center;
+  animation: slideInUp 0.6s ease-out;
+  border: 1px solid var(--cute-border);
+}
+
+.luxury-about-us-designer:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--cute-shadow-hover);
+  border-color: var(--cute-purple);
+}
+
+.luxury-about-us-designer-avatar {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--cute-pink), var(--cute-purple));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: var(--font-xl);
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 183, 197, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid var(--cute-white);
+}
+
+.luxury-about-us-designer:hover .luxury-about-us-designer-avatar {
+  transform: scale(1.1);
+}
+
+.luxury-about-us-designer-name {
+  font-size: var(--font-lg);
+  color: var(--cute-text-dark);
+  font-weight: 600;
+}
+
+.luxury-about-us-team-signature {
+  text-align: center;
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  background: var(--cute-white);
+  border-radius: 15px;
+  border: 1px solid var(--cute-border);
+  box-shadow: var(--cute-shadow);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.luxury-about-us-signature-text {
+  font-size: var(--font-sm);
+  color: var(--cute-text);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.luxury-about-us-team-name {
+  font-size: var(--font-lg);
+  color: var(--cute-pink-dark);
+  font-weight: 700;
+}
+
+
+.luxury-about-us-team {
+  padding: 3rem 0;
+  background: linear-gradient(135deg, var(--cute-blue), var(--cute-purple));
+  text-align: center;
+  position: relative;
+}
+
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.luxury-scroll-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.luxury-scroll-animation.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .luxury-about-us-container {
+    padding: 0 15px;
+  }
+  
+  .luxury-about-us-title {
+    font-size: var(--font-2xl);
+  }
+  
+  .luxury-about-us-subtitle {
+    font-size: var(--font-md);
+  }
+  
+  .luxury-about-us-features-grid,
+  .luxury-about-us-stats-grid,
+  .luxury-about-us-design-team-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .luxury-about-us-hero {
+    min-height: 40vh;
+    padding: 1.5rem 0;
+  }
+  
+  .luxury-about-us-content,
+  .luxury-about-us-stats,
+  .luxury-about-us-features,
+  .luxury-about-us-design-team,
+  .luxury-about-us-team {
+    padding: 2rem 0;
+  }
+  
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-xs: 0.75rem;
+    --font-sm: 0.8rem;
+    --font-md: 0.85rem;
+    --font-lg: 1rem;
+    --font-xl: 1.1rem;
+    --font-2xl: 1.3rem;
+    --font-3xl: 1.6rem;
+  }
+  
+  .luxury-about-us-paragraph {
+    padding: 1rem;
+  }
+  
+  .luxury-about-us-feature {
+    padding: 1.2rem 1rem;
+  }
+  
+  .luxury-about-us-designer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .luxury-about-us-designer-avatar {
+    width: 60px;
+    height: 60px;
+    font-size: var(--font-lg);
+  }
+}
+
+
+.luxury-about-us-feature:nth-child(odd):hover {
+  border-color: var(--cute-blue);
+}
+
+.luxury-about-us-feature:nth-child(even):hover {
+  border-color: var(--cute-purple);
+}
+
+.luxury-about-us-stat:nth-child(odd):hover {
+  background: linear-gradient(135deg, var(--cute-white), var(--cute-pink-light));
+}
+
+.luxury-about-us-stat:nth-child(even):hover {
+  background: linear-gradient(135deg, var(--cute-white), var(--cute-blue-light));
+}
+
+
+.luxury-about-us-team-name {
+  background: linear-gradient(45deg, var(--cute-pink), var(--cute-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
